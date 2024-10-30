@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2290726\\Desktop\\A24-420-4W6-TP3-DanikLussier\\API\\API_FlappyBirb\\API_FlappyBirb.csproj": {}
+    "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\API_FlappyBirb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2290726\\Desktop\\A24-420-4W6-TP3-DanikLussier\\API\\API_FlappyBirb\\API_FlappyBirb.csproj": {
+    "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\API_FlappyBirb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2290726\\Desktop\\A24-420-4W6-TP3-DanikLussier\\API\\API_FlappyBirb\\API_FlappyBirb.csproj",
+        "projectUniqueName": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\API_FlappyBirb.csproj",
         "projectName": "API_FlappyBirb",
-        "projectPath": "C:\\Users\\2290726\\Desktop\\A24-420-4W6-TP3-DanikLussier\\API\\API_FlappyBirb\\API_FlappyBirb.csproj",
+        "projectPath": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\API_FlappyBirb.csproj",
         "packagesPath": "C:\\Users\\2290726\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2290726\\Desktop\\A24-420-4W6-TP3-DanikLussier\\API\\API_FlappyBirb\\obj\\",
+        "outputPath": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"

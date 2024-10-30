@@ -3,6 +3,11 @@ using Microsoft.Extensions.DependencyInjection;
 using API_FlappyBirb.Data;
 using API_FlappyBirb.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<API_FlappyBirbContext>(options =>
 {
@@ -27,6 +32,25 @@ builder.Services.AddCors(options =>
         policy.AllowAnyMethod();
         policy.AllowAnyOrigin();
     });
+});
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateAudience = true,
+        ValidateIssuer = true,
+        ValidAudience = "http://localhost:4200", //Client
+        ValidIssuer = "http://localhost:7205", //Server
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
+    };
 });
 
 // Add services to the container.

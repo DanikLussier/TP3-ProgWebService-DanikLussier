@@ -31,12 +31,19 @@ export class LoginComponent {
   ngOnInit() {
   }
 
-  login(){
+  async login() : Promise<void>{
 
+    let LoginDTO = {
+      username: this.loginUsername,
+      password: this.loginPassword,
+    }
+    let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Users/Login", LoginDTO));
+    console.log(x)
+    localStorage.setItem("token", x.token)
 
     // Redirection si la connexion a réussi :
 
-    this.route.navigate(["/play"]);
+    //this.route.navigate(["/play"]);
   }
 
   async register() : Promise<void> {
@@ -46,7 +53,6 @@ export class LoginComponent {
       password: this.registerPassword,
       passwordConfirm: this.registerPasswordConfirm
     };
-    console.log("Okk")
     let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Users/Register", registerDTO));
     console.log(x)
   }
