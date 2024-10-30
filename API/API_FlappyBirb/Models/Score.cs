@@ -18,5 +18,15 @@ namespace API_FlappyBirb.Models
         [JsonIgnore]
         public virtual User? user { get; set; }
 
+        public Score(int score, float time)
+        {
+            Temps = time;
+            Value = score;
+        }
+
+        public Score()
+        {
+
+        }
     }
 }

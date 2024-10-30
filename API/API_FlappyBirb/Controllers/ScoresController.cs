@@ -73,15 +73,23 @@ namespace API_FlappyBirb.Controllers
             return NoContent();
         }
 
-        // POST: api/Scores
+        // POST: api/Score
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Score>> PostScore(Score score)
+        public async Task<ActionResult<Score>> PostScore(int score, float time)
         {
-            _context.Score.Add(score);
+            var newScore = new Score(score, time)
+            {
+                Id = _context.Score.Count(),
+                Date = DateTime.Now,
+                isVisible = true
+                //Manque a associer le user
+            };
+
+            _context.Score.Add(newScore);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetScore", new { id = score.Id }, score);
+            return CreatedAtAction("GetScore", new { id = newScore.Id }, newScore);
         }
 
         // DELETE: api/Scores/5

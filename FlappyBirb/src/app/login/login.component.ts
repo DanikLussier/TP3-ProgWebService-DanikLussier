@@ -37,13 +37,14 @@ export class LoginComponent {
       username: this.loginUsername,
       password: this.loginPassword,
     }
-    let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Users/Login", LoginDTO));
-    console.log(x)
-    localStorage.setItem("token", x.token)
-
-    // Redirection si la connexion a réussi :
-
-    //this.route.navigate(["/play"]);
+    let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Users/Login", LoginDTO)).then((x) => {
+      console.log(x)
+      localStorage.setItem("token", x.token)
+      // Redirection si la connexion a réussi :
+      this.route.navigate(["/play"])
+    }).catch((err) => {
+      console.log(err)
+    });
   }
 
   async register() : Promise<void> {
