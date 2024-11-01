@@ -4,6 +4,7 @@ import { MaterialModule } from '../material.module';
 import { FormsModule } from '@angular/forms';
 import { lastValueFrom } from 'rxjs';
 import { HttpClient, HttpContext } from '@angular/common/http';
+import { FlappyBirbServiceService } from '../services/flappy-birb-service.service';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,6 @@ import { HttpClient, HttpContext } from '@angular/common/http';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
-  domain : string = "https://localhost:7205/"
 
   hide = true;
 
@@ -26,36 +25,22 @@ export class LoginComponent {
   loginUsername : string = "";
   loginPassword : string = "";
 
-  constructor(public route : Router, public http: HttpClient) { }
+  constructor(public flappyBirb : FlappyBirbServiceService) { }
 
   ngOnInit() {
   }
 
-  async login() : Promise<void>{
-
-    let LoginDTO = {
-      username: this.loginUsername,
-      password: this.loginPassword,
-    }
-    let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Users/Login", LoginDTO)).then((x) => {
-      console.log(x)
-      localStorage.setItem("token", x.token)
-      // Redirection si la connexion a réussi :
-      this.route.navigate(["/play"])
-    }).catch((err) => {
-      console.log(err)
-    });
+  login() {
+    this.flappyBirb.login(this.loginUsername, this.loginPassword)
   }
 
-  async register() : Promise<void> {
-    let registerDTO = {
-      username: this.registerUsername,
-      email: this.registerEmail,
-      password: this.registerPassword,
-      passwordConfirm: this.registerPasswordConfirm
-    };
-    let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Users/Register", registerDTO));
-    console.log(x)
+  register() {
+    this.flappyBirb.register(
+      this.registerUsername,
+      this.registerEmail,
+      this.registerPassword,
+      this.registerPasswordConfirm
+    )
   }
   
 }

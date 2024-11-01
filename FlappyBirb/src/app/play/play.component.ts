@@ -4,6 +4,7 @@ import { MaterialModule } from '../material.module';
 import { CommonModule } from '@angular/common';
 import { lastValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { FlappyBirbServiceService } from '../services/flappy-birb-service.service';
 
 @Component({
   selector: 'app-play',
@@ -14,12 +15,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PlayComponent implements OnInit{
 
-   domain : string = "https://localhost:7205/"
-
   game : Game | null = null;
   scoreSent : boolean = false;
 
-  constructor(public http: HttpClient){}
+  constructor(public flappyBirb : FlappyBirbServiceService){}
 
   ngOnDestroy(): void {
     // Ceci est crotté mais ne le retirez pas sinon le jeu bug.
@@ -36,7 +35,7 @@ export class PlayComponent implements OnInit{
     this.scoreSent = false;
   }
 
-  async sendScore() : Promise<void> {
+  sendScore() {
     if(this.scoreSent) return;
 
     this.scoreSent = true;
@@ -45,9 +44,7 @@ export class PlayComponent implements OnInit{
     // Le score est dans sessionStorage.getItem("score")
     // Le temps est dans sessionStorage.getItem("time")
     // La date sera choisie par le serveur
-    
-      let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Scores/PostScore", 
-        {score: 10, time: 23.334555}));
-        console.log(x)
+
+    this.flappyBirb.postScore()
   }
 }

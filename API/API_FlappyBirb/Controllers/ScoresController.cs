@@ -7,11 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_FlappyBirb.Data;
 using API_FlappyBirb.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 
 namespace API_FlappyBirb.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize]
     public class ScoresController : ControllerBase
     {
         private readonly API_FlappyBirbContext _context;
@@ -23,94 +27,58 @@ namespace API_FlappyBirb.Controllers
 
         // GET: api/Scores
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Score>>> GetScore()
+        public async Task<ActionResult<IEnumerable<Score>>> GetPublicScores()
+        {
+            IEnumerable<Score> scores = await _context.Score.ToListAsync();
+
+            return Ok(scores.Where(s => s.user != null).Select(s => new ScoreGetDTO
+            {
+                Id = s.Id,
+                ScoreValue = s.Value,
+                TimeInSeconds = s.Temps,
+                Date = s.Date,
+                IsPublic = s.isVisible,
+                Pseudo = s.user!.UserName
+            }));
+        }
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Score>>> GetMyScores()
         {
             return await _context.Score.ToListAsync();
-        }
-
-        // GET: api/Scores/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Score>> GetScore(int id)
-        {
-            var score = await _context.Score.FindAsync(id);
-
-            if (score == null)
-            {
-                return NotFound();
-            }
-
-            return score;
-        }
-
-        // PUT: api/Scores/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutScore(int id, Score score)
-        {
-            if (id != score.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(score).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ScoreExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
         }
 
         // POST: api/Score
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Score>> PostScore(int score, float time)
+        public async Task<ActionResult<Score>> PostScore(ScorePostDTO dto)
         {
-            var newScore = new Score(score, time)
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            User? user = await _context.Users.FindAsync(userId);
+
+            if (user != null)
             {
-                Id = _context.Score.Count(),
-                Date = DateTime.Now,
-                isVisible = true
-                //Manque a associer le user
-            };
+                var newScore = new Score(dto.Value, dto.Time)
+                {
+                    Date = DateTime.Now,
+                    isVisible = true,
+                    user = user
+                };
 
-            _context.Score.Add(newScore);
-            await _context.SaveChangesAsync();
+                _context.Score.Add(newScore);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetScore", new { id = newScore.Id }, newScore);
-        }
-
-        // DELETE: api/Scores/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteScore(int id)
-        {
-            var score = await _context.Score.FindAsync(id);
-            if (score == null)
-            {
-                return NotFound();
+                return Ok(newScore);
             }
 
-            _context.Score.Remove(score);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return StatusCode(StatusCodes.Status400BadRequest,
+                new { Message = "Utilisateur non trouvé" });
         }
 
-        private bool ScoreExists(int id)
+        [HttpPut]
+        public async Task<ActionResult<Score>> ChangeScoreVisibility()
         {
-            return _context.Score.Any(e => e.Id == id);
+            return Ok();
         }
     }
 }

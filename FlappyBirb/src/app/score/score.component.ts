@@ -3,6 +3,7 @@ import { Score } from '../models/score';
 import { MaterialModule } from '../material.module';
 import { CommonModule } from '@angular/common';
 import { Round00Pipe } from '../pipes/round-00.pipe';
+import { FlappyBirbServiceService } from '../services/flappy-birb-service.service';
 
 @Component({
   selector: 'app-score',
@@ -17,12 +18,14 @@ export class ScoreComponent {
   publicScores : Score[] = [];
   userIsConnected : boolean = false;
 
-  constructor() { }
+  constructor(public flappyBirb : FlappyBirbServiceService) { }
 
   async ngOnInit() {
 
     this.userIsConnected = sessionStorage.getItem("token") != null;
-
+    this.flappyBirb.getPublicScores().then((x) => {
+      this.publicScores = x
+    });
 
   }
 
