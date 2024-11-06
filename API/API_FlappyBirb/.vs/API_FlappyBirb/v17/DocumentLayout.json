@@ -3,39 +3,25 @@
   "WorkspaceRootPath": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\controllers\\scorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:controllers\\scorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\data\\api_flappybirbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:data\\api_flappybirbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\scoregetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\scoregetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/API_FlappyBirbContext_44445081_21f9_4f95_995b_66f45bbf790b/True/SqlTable/dbo.AspNetUserRoles.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/API_FlappyBirbContext_44445081_21f9_4f95_995b_66f45bbf790b/True/SqlTable/dbo.AspNetUserClaims.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/API_FlappyBirbContext_44445081_21f9_4f95_995b_66f45bbf790b/True/SqlTable/dbo.Score.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\scorepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\scorepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/API_FlappyBirbContext_44445081_21f9_4f95_995b_66f45bbf790b/True/SqlTable/dbo.Score.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\data\\api_flappybirbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:data\\api_flappybirbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\controllers\\scorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:controllers\\scorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -44,6 +30,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\scoregetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\scoregetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\scorepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\scorepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|solutionrelative:models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FD7D9D0-FFB8-46F4-85EF-E783542BAA67}|API_FlappyBirb.csproj|c:\\users\\2290726\\desktop\\tp3-progwebservice-daniklussier\\api\\api_flappybirb\\models\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,68 +68,62 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "API_FlappyBirbContext.cs",
+              "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Data\\API_FlappyBirbContext.cs",
+              "RelativeDocumentMoniker": "Data\\API_FlappyBirbContext.cs",
+              "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Data\\API_FlappyBirbContext.cs",
+              "RelativeToolTip": "Data\\API_FlappyBirbContext.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAADwvx8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T17:32:49.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.AspNetUserRoles [Donn\u00E9es]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/API_FlappyBirbContext_44445081_21f9_4f95_995b_66f45bbf790b/True/SqlTable/dbo.AspNetUserRoles.sql",
+              "ToolTip": "dbo.AspNetUserRoles [Donn\u00E9es]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-06T21:10:23.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.AspNetUserClaims [Donn\u00E9es]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/API_FlappyBirbContext_44445081_21f9_4f95_995b_66f45bbf790b/True/SqlTable/dbo.AspNetUserClaims.sql",
+              "ToolTip": "dbo.AspNetUserClaims [Donn\u00E9es]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-06T21:10:13.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Score [Donn\u00E9es]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/API_FlappyBirbContext_44445081_21f9_4f95_995b_66f45bbf790b/True/SqlTable/dbo.Score.sql",
+              "ToolTip": "dbo.Score [Donn\u00E9es]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-06T21:09:57.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ScoresController.cs",
               "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Controllers\\ScoresController.cs",
               "RelativeDocumentMoniker": "Controllers\\ScoresController.cs",
               "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Controllers\\ScoresController.cs",
               "RelativeToolTip": "Controllers\\ScoresController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAgwCYAAAAeAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAQwCIAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-25T17:20:36.509Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ScoreGetDTO.cs",
-              "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\ScoreGetDTO.cs",
-              "RelativeDocumentMoniker": "Models\\ScoreGetDTO.cs",
-              "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\ScoreGetDTO.cs",
-              "RelativeToolTip": "Models\\ScoreGetDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T18:21:27.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T17:20:58.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dbo.Score [Donn\u00E9es]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/API_FlappyBirbContext_44445081_21f9_4f95_995b_66f45bbf790b/True/SqlTable/dbo.Score.sql",
-              "ToolTip": "dbo.Score [Donn\u00E9es]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-11-01T17:32:43.401Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAowE0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T17:37:29.777Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Models\\LoginDTO.cs",
@@ -131,25 +131,11 @@
               "RelativeToolTip": "Models\\LoginDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T18:47:44.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T18:47:44.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "API_FlappyBirbContext.cs",
-              "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Data\\API_FlappyBirbContext.cs",
-              "RelativeDocumentMoniker": "Data\\API_FlappyBirbContext.cs",
-              "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Data\\API_FlappyBirbContext.cs",
-              "RelativeToolTip": "Data\\API_FlappyBirbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T17:32:49.332Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "ScorePostDTO.cs",
               "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\ScorePostDTO.cs",
               "RelativeDocumentMoniker": "Models\\ScorePostDTO.cs",
@@ -157,38 +143,75 @@
               "RelativeToolTip": "Models\\ScorePostDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T16:26:04.799Z",
+              "WhenOpened": "2024-11-01T16:26:04.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T20:56:30.253Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Score.cs",
               "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\Score.cs",
               "RelativeDocumentMoniker": "Models\\Score.cs",
               "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\Score.cs",
               "RelativeToolTip": "Models\\Score.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAVAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAQwAcAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-25T16:59:57.185Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
+              "Title": "ScoreGetDTO.cs",
+              "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\ScoreGetDTO.cs",
+              "RelativeDocumentMoniker": "Models\\ScoreGetDTO.cs",
+              "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\ScoreGetDTO.cs",
+              "RelativeToolTip": "Models\\ScoreGetDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T18:21:27.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAiwBgAAAAAAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAwBgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-25T16:57:20.182Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowE0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T17:37:29.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "RegisterDTO.cs",
               "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\Models\\RegisterDTO.cs",
               "RelativeDocumentMoniker": "Models\\RegisterDTO.cs",
@@ -196,12 +219,11 @@
               "RelativeToolTip": "Models\\RegisterDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T17:41:30.484Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T17:41:30.484Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\2290726\\Desktop\\TP3-ProgWebService-DanikLussier\\API\\API_FlappyBirb\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",

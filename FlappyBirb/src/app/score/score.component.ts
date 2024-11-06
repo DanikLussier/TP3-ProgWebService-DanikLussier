@@ -22,16 +22,22 @@ export class ScoreComponent {
 
   async ngOnInit() {
 
-    this.userIsConnected = sessionStorage.getItem("token") != null;
+    this.userIsConnected = sessionStorage.getItem("token") != "";
     this.flappyBirb.getPublicScores().then((x) => {
       this.publicScores = x
     });
+    this.flappyBirb.getPrivateScores().then((x) => {
+      this.myScores = x
+    })
 
   }
 
   async changeScoreVisibility(score : Score){
-
-
+    console.log(score)
+    await this.flappyBirb.changeScoreVisibility(score).then((x) => {
+      console.log(x)
+    });
+    this.ngOnInit()
   }
 
 }

@@ -33,8 +33,26 @@ export class FlappyBirbServiceService {
 
   }
 
-  async getPrivateScores() : Promise<void>{
+  async getPrivateScores() : Promise<Array<Score>>{
+    let token = localStorage.getItem("token")
+    let httpOptions = {
+      headers : new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization' : 'Bearer ' + token
+      })
+    }
 
+    let scores = new Array<Score>
+
+    let x = await lastValueFrom(this.http.get<Array<Score>>(this.domain + "api/Scores/GetMyScores", httpOptions)).then((x) => {
+      scores = x
+    }).catch((err) => {
+      console.log(err)
+    });
+
+    console.log(scores)
+
+    return scores
   }
 
   async getPublicScores() : Promise<Array<Score>>{
@@ -52,12 +70,32 @@ export class FlappyBirbServiceService {
     let x = await lastValueFrom(this.http.get<Array<Score>>(this.domain + "api/Scores/GetPublicScores", httpOptions)).then((x) => {
       scores = x
     }).catch((err) => {
-      console.log("Erreur en cherchant les scores publics")
+      console.log(err)
     });
 
     console.log(scores)
 
     return scores
+  }
+
+  async changeScoreVisibility(score: Score) : Promise<void> {
+
+    let token = localStorage.getItem("token")
+    let httpOptions = {
+      headers : new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization' : 'Bearer ' + token
+      })
+    }
+
+    console.log("ok")
+
+    let x = await lastValueFrom(this.http.put<any>(this.domain + "api/Scores/ChangeScoreVisibility/" + score.id, null, httpOptions)).then((x) => {
+      console.log("success modified")
+      console.log(x)
+    }).catch((err) => {
+      console.log(err)
+    });
   }
 
   async login(username : string, password : string) : Promise<void>{

@@ -4,6 +4,7 @@ using API_FlappyBirb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_FlappyBirb.Migrations
 {
     [DbContext(typeof(API_FlappyBirbContext))]
-    partial class API_FlappyBirbContextModelSnapshot : ModelSnapshot
+    [Migration("20241106210837_seed")]
+    partial class seed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +61,7 @@ namespace API_FlappyBirb.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2024, 11, 6, 16, 13, 2, 655, DateTimeKind.Local).AddTicks(969),
+                            Date = new DateTime(2024, 11, 6, 16, 8, 37, 164, DateTimeKind.Local).AddTicks(5753),
                             Temps = 4.6f,
                             Value = 5,
                             isVisible = true,
@@ -67,7 +70,7 @@ namespace API_FlappyBirb.Migrations
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2024, 11, 6, 16, 13, 2, 655, DateTimeKind.Local).AddTicks(1077),
+                            Date = new DateTime(2024, 11, 6, 16, 8, 37, 164, DateTimeKind.Local).AddTicks(5827),
                             Temps = 9.8f,
                             Value = 10,
                             isVisible = false,
@@ -76,7 +79,7 @@ namespace API_FlappyBirb.Migrations
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2024, 11, 6, 16, 13, 2, 655, DateTimeKind.Local).AddTicks(1083),
+                            Date = new DateTime(2024, 11, 6, 16, 8, 37, 164, DateTimeKind.Local).AddTicks(5830),
                             Temps = 20.3f,
                             Value = 12,
                             isVisible = true,
@@ -85,7 +88,7 @@ namespace API_FlappyBirb.Migrations
                         new
                         {
                             Id = 4,
-                            Date = new DateTime(2024, 11, 6, 16, 13, 2, 655, DateTimeKind.Local).AddTicks(1087),
+                            Date = new DateTime(2024, 11, 6, 16, 8, 37, 164, DateTimeKind.Local).AddTicks(5832),
                             Temps = 34.9f,
                             Value = 23,
                             isVisible = false,
@@ -162,13 +165,13 @@ namespace API_FlappyBirb.Migrations
                         {
                             Id = "11111111-1111-1111-1111-111111111111",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4a7ecc4f-dfe4-467d-80b7-1f885aab3257",
+                            ConcurrencyStamp = "23490a9d-c2fc-4839-9f90-3f5d2ea4124c",
                             Email = "d@d.d",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAECAjv8Xxb5t9e799HFk3sZS094pPUv+uNpWkvDATuLByCdqmNfXLuyDjEKucPg/fJg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBQrHFFORSjfOxGiWqz8aQ1MTl+yBkitXW7nLuTNr4M4+vC/2lGyvFdOWbJwUw1XiA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "402a40ed-3b20-476f-b2c3-ea7e21ea4545",
+                            SecurityStamp = "606398af-95dc-43e9-8184-dba49ec79226",
                             TwoFactorEnabled = false,
                             UserName = "dan"
                         },
@@ -176,13 +179,12 @@ namespace API_FlappyBirb.Migrations
                         {
                             Id = "22222222-2222-2222-2222-222222222222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9860d037-8bf6-46ef-af64-5ac1ffe0d6b0",
+                            ConcurrencyStamp = "74693afd-6696-4578-87f0-8cd78c0403bb",
                             Email = "a@a.a",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEEFmbzuuQNyv2ehcgqyuEfP8nCABz5//hjeagbE3krCkWI3fFlanqHLbUvEblqP0nw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "70eb651a-e03f-4b7c-817b-a676fef64469",
+                            SecurityStamp = "00412353-172a-4edd-8fb5-bc178db1e0f4",
                             TwoFactorEnabled = false,
                             UserName = "ali"
                         });
