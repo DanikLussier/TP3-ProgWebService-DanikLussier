@@ -15,36 +15,21 @@ export class FlappyBirbServiceService {
 
   async postScore() : Promise<void>{
 
-    let token = localStorage.getItem("token")
-    let httpOptions = {
-      headers : new HttpHeaders({
-        'Content-Type' : 'application/json',
-        'Authorization' : 'Bearer ' + token
-      })
-    }
-
     let scoreDTO = {
       value: JSON.parse(sessionStorage.getItem("score")!),
       time: JSON.parse(sessionStorage.getItem("time")!)
     }
     
-    let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Scores/PostScore", scoreDTO, httpOptions));
+    let x = await lastValueFrom(this.http.post<any>(this.domain + "api/Scores/PostScore", scoreDTO));
       console.log(x)
 
   }
 
   async getPrivateScores() : Promise<Array<Score>>{
-    let token = localStorage.getItem("token")
-    let httpOptions = {
-      headers : new HttpHeaders({
-        'Content-Type' : 'application/json',
-        'Authorization' : 'Bearer ' + token
-      })
-    }
 
     let scores = new Array<Score>
 
-    let x = await lastValueFrom(this.http.get<Array<Score>>(this.domain + "api/Scores/GetMyScores", httpOptions)).then((x) => {
+    let x = await lastValueFrom(this.http.get<Array<Score>>(this.domain + "api/Scores/GetMyScores")).then((x) => {
       scores = x
     }).catch((err) => {
       console.log(err)
@@ -57,17 +42,9 @@ export class FlappyBirbServiceService {
 
   async getPublicScores() : Promise<Array<Score>>{
 
-    let token = localStorage.getItem("token")
-    let httpOptions = {
-      headers : new HttpHeaders({
-        'Content-Type' : 'application/json',
-        'Authorization' : 'Bearer ' + token
-      })
-    }
-
     let scores = new Array<Score>
 
-    let x = await lastValueFrom(this.http.get<Array<Score>>(this.domain + "api/Scores/GetPublicScores", httpOptions)).then((x) => {
+    let x = await lastValueFrom(this.http.get<Array<Score>>(this.domain + "api/Scores/GetPublicScores")).then((x) => {
       scores = x
     }).catch((err) => {
       console.log(err)
@@ -80,19 +57,8 @@ export class FlappyBirbServiceService {
 
   async changeScoreVisibility(score: Score) : Promise<void> {
 
-    let token = localStorage.getItem("token")
-    let httpOptions = {
-      headers : new HttpHeaders({
-        'Content-Type' : 'application/json',
-        'Authorization' : 'Bearer ' + token
-      })
-    }
-
-    console.log("ok")
-
-    let x = await lastValueFrom(this.http.put<any>(this.domain + "api/Scores/ChangeScoreVisibility/" + score.id, null, httpOptions)).then((x) => {
-      console.log("success modified")
-      console.log(x)
+    let x = await lastValueFrom(this.http.put<any>(this.domain + "api/Scores/ChangeScoreVisibility/" + score.id, null)).then((x) => {
+      console.log("visibility modified with success")
     }).catch((err) => {
       console.log(err)
     });

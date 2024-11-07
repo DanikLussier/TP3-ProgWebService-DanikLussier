@@ -27,6 +27,8 @@ namespace API_FlappyBirb.Data
                 Id = "11111111-1111-1111-1111-111111111111",
                 UserName = "dan",
                 Email = "d@d.d",
+                NormalizedEmail = "D@D.D",
+                NormalizedUserName = "DAN"
             };
             u1.PasswordHash = hasher.HashPassword(u1, "Dan13!");
 
@@ -35,6 +37,8 @@ namespace API_FlappyBirb.Data
                 Id = "22222222-2222-2222-2222-222222222222",
                 UserName = "ali",
                 Email = "a@a.a",
+                NormalizedEmail = "A@A.A",
+                NormalizedUserName = "ALI"
             };
             u2.PasswordHash = hasher.HashPassword(u2, "Al12!");
 

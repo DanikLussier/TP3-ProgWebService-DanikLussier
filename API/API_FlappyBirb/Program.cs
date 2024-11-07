@@ -8,12 +8,15 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Configuration;
+using API_FlappyBirb.Services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<API_FlappyBirbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("API_FlappyBirbContext") ?? throw new InvalidOperationException("Connection string 'API_FlappyBirbContext' not found."));
     options.UseLazyLoadingProxies();
 });
+
+builder.Services.AddScoped<ScoresService>();
 
 builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<API_FlappyBirbContext>();
 

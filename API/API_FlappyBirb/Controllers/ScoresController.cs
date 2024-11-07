@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using NuGet.Protocol.Plugins;
+using API_FlappyBirb.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore;
 
 namespace API_FlappyBirb.Controllers
 {
@@ -19,20 +22,23 @@ namespace API_FlappyBirb.Controllers
     [Authorize]
     public class ScoresController : ControllerBase
     {
-        private readonly API_FlappyBirbContext _context;
+        private readonly ScoresService _scoresService;
+        readonly UserManager<User> UserManager;
 
-        public ScoresController(API_FlappyBirbContext context)
+        public ScoresController(ScoresService scoresService, UserManager<User> userManager)
         {
-            _context = context;
+            _scoresService = scoresService;
+            UserManager = userManager;
         }
 
         // GET: api/Scores
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Score>>> GetPublicScores()
         {
-            IEnumerable<Score> scores = await _context.Score.ToListAsync();
+            IEnumerable<Score> scores = await _scoresService.GetAll();
 
-            return Ok(scores.Where(s => s.user != null && s.isVisible == true).Select(s => new ScoreGetDTO
+            return Ok(scores.Where(s => s.user != null && s.isVisible == true).OrderByDescending(s => s.Value).Take(10).Select(s => new ScoreGetDTO
             {
                 Id = s.Id,
                 ScoreValue = s.Value,
@@ -46,28 +52,22 @@ namespace API_FlappyBirb.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Score>>> GetMyScores()
         {
-            if (_context.Score == null) return NotFound();
+            User? user = await UserManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            User? user = await _context.Users.FindAsync(userId);
+            if (user == null) return Unauthorized(); //non authentifié ou token invalide
 
-            if (user != null)
+            if (_scoresService.IsScoresSetEmpty()) return StatusCode(StatusCodes.Status500InternalServerError,
+                new { Message = "Veuillez réessayer plus tard" }); //Prob avec la BD?
+
+            return Ok(user.Scores.Select(s => new ScoreGetDTO
             {
-                IEnumerable<Score> scores = await _context.Score.ToListAsync();
-
-                return Ok(scores.Where(s => s.user == user).Select(s => new ScoreGetDTO
-                {
-                    Id = s.Id,
-                    ScoreValue = s.Value,
-                    TimeInSeconds = s.Temps,
-                    Date = s.Date,
-                    IsPublic = s.isVisible,
-                    Pseudo = s.user!.UserName
-                }));
-            }
-
-            return StatusCode(StatusCodes.Status400BadRequest,
-                new { Message = "Utilisateur non trouvé." });
+                Id = s.Id,
+                ScoreValue = s.Value,
+                TimeInSeconds = s.Temps,
+                Date = s.Date,
+                IsPublic = s.isVisible,
+                Pseudo = s.user!.UserName
+            }));
         }
 
         // POST: api/Score
@@ -75,60 +75,48 @@ namespace API_FlappyBirb.Controllers
         [HttpPost]
         public async Task<ActionResult<Score>> PostScore(ScorePostDTO dto)
         {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            User? user = await _context.Users.FindAsync(userId);
+            User? user = await UserManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-            if (user != null)
+            if (user == null) return Unauthorized(); // Non authentifié ou token invalide
+
+            var score = new Score
             {
-                var newScore = new Score(dto.Value, dto.Time)
-                {
-                    Date = DateTime.Now,
-                    isVisible = true,
-                    user = user
-                };
+                Value = dto.Value,
+                Temps = dto.Time,
+                Date = DateTime.Now,
+                isVisible = false,
+                user = user
+            };
+            Score? newScore = await _scoresService.CreateScore(score);
 
-                _context.Score.Add(newScore);
-                await _context.SaveChangesAsync();
+            if (newScore == null) return StatusCode(StatusCodes.Status500InternalServerError,
+                new { Message = "Veuillez réessayer plus tard." }); //Prob avec la BD?
 
-                return Ok(newScore);
-            }
-
-            return StatusCode(StatusCodes.Status400BadRequest,
-                new { Message = "Utilisateur non trouvé" });
+            return Ok(newScore);
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<Score>> ChangeScoreVisibility(int id)
         {
             //Utilisateur qui fait la requête
-            User? user = await _context.Users.FindAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
-
-            if (_context.Score == null) return StatusCode(StatusCodes.Status500InternalServerError,
-                new { Message = "Veuillez réessayer plus tard." }); // Problème BD?
+            User? user = await UserManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
             //Score à supprimer
-            var score = await _context.Score.Where(s => s.Id == id).FirstOrDefaultAsync();
+            var score = await _scoresService.GetScore(id);
 
             //Si le commentaire n'est pas trouvé
             if (score == null) return NotFound();
 
             //Si l'utilisateur n'est PAS propriétaire du commentaire
-            if (user == null || !user.Scores.Contains(score))
+            if (user == null || score.user != user)
             {
                 return Unauthorized(new { Message = "Hey touche pas, c'est pas à toi !" });
             }
 
-            score.isVisible = !score.isVisible;
+            Score? newScore = await _scoresService.ChangeVisibility(id, score);
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch(DbUpdateConcurrencyException)
-            {
-                if ((await _context.Score.FindAsync(id)) == null) return NotFound();
-                else throw;
-            }
+            if (newScore == null) return StatusCode(StatusCodes.Status500InternalServerError,
+                new { Message = "Veuillez réessayer plus tard." }); // Prob avec la BD?
 
             return Ok(new { Message = "Visibilité modifiée", Score = score });
         }
